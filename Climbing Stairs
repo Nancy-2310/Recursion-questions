@@ -1,0 +1,29 @@
+Stair Path :-
+
+Iterative Solution :-
+class Solution {
+public:
+    int climbStairs(int n){
+      int n1 = 1;
+      int n2 = 2;
+      int sum = 0;
+      if(n <= 2){
+          return n;
+      }
+      for(int i = 3; i <= n; i++){
+      sum = n1 + n2;
+      n1 = n2;
+      n2 = sum;
+      } 
+      return sum; 
+    }
+};
+
+Recursive Solution :-
+
+int stairPath( int n){
+if( n == 2) return 2;
+if( n == 1) return 1;
+
+return stairPath(n - 1) + stairPath(n - 2);
+}
